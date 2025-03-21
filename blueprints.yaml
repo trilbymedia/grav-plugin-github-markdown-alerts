@@ -1,9 +1,9 @@
 name: Github Markdown Alerts
 slug: github-markdown-alerts
 type: plugin
-version: 0.1.0
+version: 1.0.0
 description: Extends Grav&#039;s markdown implementation to add support for github&#039;s Alert markdown extensions
-icon: plug
+icon: exclamation-triangle
 author:
   name: Trilby Media
   email: hello@trilby.media
@@ -15,7 +15,7 @@ docs: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/blob/dev
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.6.0' }
+  - { name: grav, version: '>=1.7.0' }
 
 form:
   validation: loose
