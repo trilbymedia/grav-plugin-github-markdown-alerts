@@ -56,6 +56,8 @@ colors:
 
 Note that if you use the Admin Plugin, a file with your configuration named github-markdown-alerts.yaml will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.
 
+![admin](assets/admin.png)
+
 ## Usage
 
 Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information. On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.
