@@ -109,5 +109,3 @@ renders like this:
 
 ![screenshot 2](assets/screenshot2.png)
 
-
-# grav-plugin-github-markdown-alerts

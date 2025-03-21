@@ -1,0 +1,24 @@
+{
+  "name": "trilbymedia/github-markdown-alerts",
+  "type": "grav-plugin",
+  "description": "Extends Grav&#039;s markdown implementation to add support for github&#039;s Alert markdown extensions",
+  "keywords": ["plugin"],
+  "homepage": "https://github.com/trilbymedia/grav-plugin-github-markdown-alerts",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Trilby Media",
+      "email": "hello@trilby.media",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\GithubMarkdownAlerts\\": "classes/"
+    },
+    "classmap":  ["github-markdown-alerts.php"]
+  }
+}

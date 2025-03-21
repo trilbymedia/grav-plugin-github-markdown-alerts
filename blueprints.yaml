@@ -1,0 +1,137 @@
+name: Github Markdown Alerts
+slug: github-markdown-alerts
+type: plugin
+version: 0.1.0
+description: Extends Grav&#039;s markdown implementation to add support for github&#039;s Alert markdown extensions
+icon: plug
+author:
+  name: Trilby Media
+  email: hello@trilby.media
+homepage: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/issues
+docs: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    include_css:
+      type: toggle
+      label: PLUGIN_GITHUB_MARKDOWN_ALERTS.INCLUDE_CSS
+      help: PLUGIN_GITHUB_MARKDOWN_ALERTS.INCLUDE_CSS_HELP
+      highlight: 1
+      default: 1
+      options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+      validate:
+          type: bool
+    wrapper_class:
+      type: text
+      label: PLUGIN_GITHUB_MARKDOWN_ALERTS.WRAPPER_CLASS
+      default: md-alert md-alert--
+      validate:
+          type: string
+    title_class:
+      type: text
+      label: PLUGIN_GITHUB_MARKDOWN_ALERTS.TITLE_CLASS
+      default: md-alert-title
+      validate:
+          type: string
+    body_class:
+      type: text
+      label: PLUGIN_GITHUB_MARKDOWN_ALERTS.BODY_CLASS
+      default: md-alert-body
+      validate:
+          type: string
+    enable_octicons:
+      type: toggle
+      label: PLUGIN_GITHUB_MARKDOWN_ALERTS.ENABLE_OCTICONS
+      help: PLUGIN_GITHUB_MARKDOWN_ALERTS.ENABLE_OCTICONS_HELP
+      highlight: 1
+      default: 1
+      options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+      validate:
+          type: bool
+    _advanced_section:
+      type: section
+      title: PLUGIN_ADMIN.ADVANCED
+      underline: true
+      fields:
+        colors.note-border:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.NOTE_BORDER_COLOR
+          default: '#316dca'
+          validate:
+            type: color
+        colors.note-title:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.NOTE_TITLE_COLOR
+          default: '#316dca'
+          validate:
+            type: color
+        colors.tip-border:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.TIP_BORDER_COLOR
+          default: '#347d39'
+          validate:
+            type: color
+        colors.tip-title:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.TIP_TITLE_COLOR
+          default: '#347d39'
+          validate:
+            type: color
+        colors.important-border:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.IMPORTANT_BORDER_COLOR
+          default: '#8256d0'
+          validate:
+            type: color
+        colors.important-title:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.IMPORTANT_TITLE_COLOR
+          default: '#8256d0'
+          validate:
+            type: color
+        colors.warning-border:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.WARNING_BORDER_COLOR
+          default: '#c69026'
+          validate:
+            type: color
+        colors.warning-title:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.WARNING_TITLE_COLOR
+          default: '#c69026'
+          validate:
+            type: color
+        colors.caution-border:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.CAUTION_BORDER_COLOR
+          default: '#c93c37'
+          validate:
+            type: color
+        colors.caution-title:
+          type: colorpicker
+          label: PLUGIN_GITHUB_MARKDOWN_ALERTS.CAUTION_TITLE_COLOR
+          default: '#c93c37'
+          validate:
+            type: color

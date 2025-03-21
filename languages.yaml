@@ -1,0 +1,25 @@
+en:
+  PLUGIN_GITHUB_MARKDOWN_ALERTS:
+    INCLUDE_CSS: Include CSS
+    INCLUDE_CSS_HELP: Include bundled Github-style CSS for the alerts
+    ENABLE_OCTICONS: Enable Octicons
+    ENABLE_OCTICONS_HELP: Enable Octicons SVGs for the alerts
+    WRAPPER_CLASS: Wrapper Class
+    TITLE_CLASS: Title Class
+    BODY_CLASS: Body Class
+    NOTE: Note
+    TIP: Tip
+    IMPORTANT: Important
+    WARNING: Warning
+    CAUTION: Caution
+    NOTE_BORDER_COLOR: Note Border Color
+    NOTE_TITLE_COLOR: Note Title Color
+    TIP_BORDER_COLOR: Tip Border Color
+    TIP_TITLE_COLOR: Tip Title Color
+    IMPORTANT_BORDER_COLOR: Important Border Color
+    IMPORTANT_TITLE_COLOR: Important Title Color
+    WARNING_BORDER_COLOR: Warning Border Color
+    WARNING_TITLE_COLOR: Warning Title Color
+    CAUTION_BORDER_COLOR: Caution Border Color
+    CAUTION_TITLE_COLOR: Caution Title Color
+
