@@ -8,8 +8,7 @@ author:
   name: Trilby Media
   email: hello@trilby.media
 homepage: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts
-demo: http://demo.yoursite.com
-keywords: grav, plugin, etc
+keywords: grav, plugin, markdown, github, GFM
 bugs: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/issues
 docs: https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/blob/develop/README.md
 license: MIT
