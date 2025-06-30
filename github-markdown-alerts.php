@@ -20,7 +20,8 @@ class GithubMarkdownAlertsPlugin extends Plugin
     {
         return [
             'onMarkdownInitialized' => ['onMarkdownInitialized', 0],
-            'onTwigSiteVariables'   => ['onTwigSiteVariables', 0]
+            'onTwigSiteVariables'   => ['onTwigSiteVariables', 0],
+            'registerEditorProPlugin' => ['registerEditorProPlugin', 0]
         ];
     }
 
@@ -121,5 +122,16 @@ class GithubMarkdownAlertsPlugin extends Plugin
 }";
             $this->grav['assets']->addInlineCss($theme);
         }
+    }
+
+    public function registerEditorProPlugin($event)
+    {
+        $plugins = $event['plugins'];
+        
+        // Add Editor Pro GitHub alerts integration JavaScript
+        $plugins['js'][] = 'plugin://github-markdown-alerts/editor-pro/github-alerts-integration.js';
+        
+        $event['plugins'] = $plugins;
+        return $event;
     }
 }
