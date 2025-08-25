@@ -1,6 +1,6 @@
 # Github Markdown Alerts Plugin
 
-The **Github Markdown Alerts** Plugin is an extension for [Grav CMS](https://github.com/getgrav/grav). It adds support for Github Flavored Markdown Alerts to your Grav site. The documenation and syntax can be found in the [GitHub Docs](https://docs.github.com/en/github/writing-on-github/working-with-github-flavored-markdown/creating-admonitions-in-github-flavored-markdown).
+The **Github Markdown Alerts** Plugin is an extension for [Grav CMS](https://github.com/getgrav/grav). It adds support for Github Flavored Markdown Alerts to your Grav site. The documentation and syntax can be found in the [GitHub Docs](https://docs.github.com/en/github/writing-on-github/working-with-github-flavored-markdown/creating-admonitions-in-github-flavored-markdown).
 
 ## Installation
 
@@ -55,6 +55,8 @@ colors:
 ```
 
 Note that if you use the Admin Plugin, a file with your configuration named github-markdown-alerts.yaml will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.
+
+![admin](assets/admin.png)
 
 ## Usage
 
