@@ -146,6 +146,7 @@ renders like this:
 
 Here's an example combining custom titles with rich content:
 
+```markdown
 > [!WARNING title="Security Update Required"]
 > **Immediate action needed:** Please update your system to version 2.5.1 to address critical security vulnerabilities.
 >
@@ -168,6 +169,7 @@ Here's an example combining custom titles with rich content:
 > ```
 >
 > Failure to update may result in security breaches and data loss.
+```
 
 renders like this:
 
