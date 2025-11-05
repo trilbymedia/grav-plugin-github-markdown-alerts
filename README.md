@@ -85,6 +85,10 @@ To add an alert, use a special blockquote line specifying the alert type, follow
 > Advises about risks or negative outcomes of certain actions.
 ```
 
+And here are the rendered alerts:
+
+![screenshot 1](assets/screenshot.png)
+
 ### Custom Titles
 
 You can also specify custom titles for your alerts using the `title` attribute:
@@ -105,6 +109,10 @@ You can also specify custom titles for your alerts using the `title` attribute:
 > [!CAUTION title="Potential Risk"]
 > Advises about risks or negative outcomes of certain actions.
 ```
+
+And here are the rendered alerts:
+
+![screenshot 2](assets/screenshot2.png)
 
 The custom title will be displayed in the format: "TYPE: Your Custom Title". For example, `[!NOTE title="Additional Information"]` will display as "NOTE: Additional Information".
 
@@ -130,27 +138,37 @@ These alerts also support full markdown syntax inside them:
 > tincidunt ipsum, vel placerat sem sem vitae risus. Aenean posuere sed purus nec pretium
 ```
 
+renders like this:
+
+![screenshot 3](assets/screenshot3.png)
+
 ### Mixed Examples
 
 Here's an example combining custom titles with rich content:
 
-```markdown
 > [!WARNING title="Security Update Required"]
 > **Immediate action needed:** Please update your system to version 2.5.1 to address critical security vulnerabilities.
 >
 > Steps to update:
 > 1. Backup your current data
 > 2. Download the latest release
-> 3. Run the update script
-> 4. Verify installation
+> 3. Run the update script:
 >
-> Failure to update may result in security breaches.
-```
+> ```bash
+> # Update command for Linux/Mac
+> curl -sSL https://example.com/update.sh | bash
+> 
+> # Or using package manager
+> sudo apt update && sudo apt upgrade package-name
+> ```
+> 4. Verify installation:
+> ```bash
+> systemctl status your-service
+> journalctl -u your-service --since "1 hour ago"
+> ```
+>
+> Failure to update may result in security breaches and data loss.
 
-And here are the rendered alerts:
+renders like this:
 
-![screenshot 1](assets/screenshot.png)
-
-The example with rich markdown content renders like this:
-
-![screenshot 2](assets/screenshot2.png)
+![screenshot 4](assets/screenshot4.png)
