@@ -41,10 +41,20 @@ class GithubMarkdownAlertsPlugin extends Plugin
         $markdown->addBlockType('>', 'Alerts', true, false, 0);
 
         $markdown->blockAlerts = function($line) {
-            if (preg_match('/^>\s\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/i', $line['text'], $matches))
+
+            if (preg_match('/^>\s\[!([A-Z]+)(?:\s+title="([^"]+)")?\]\s*$/i', $line['text'], $matches))
             {
                 $alert_type = strtolower($matches[1]);
-                $title_text = Grav::instance()['language']->translate('PLUGIN_GITHUB_MARKDOWN_ALERTS.' . strtoupper($alert_type));
+                $custom_title = isset($matches[2]) ? trim($matches[2]) : null;
+                
+
+                $default_title = Grav::instance()['language']->translate('PLUGIN_GITHUB_MARKDOWN_ALERTS.' . strtoupper($alert_type));
+                
+                if ($custom_title) {
+                    $title_text = $default_title . ': ' . $custom_title;
+                } else {
+                    $title_text = $default_title;
+                }
 
                 $wrapper_class = $this->config->get('plugins.github-markdown-alerts.wrapper_class');
                 $title_class = $this->config->get('plugins.github-markdown-alerts.title_class');
