@@ -21,7 +21,7 @@ To install the plugin manually, download the zip-version of this repository and 
 You should now have all the plugin files under
 
     /your/site/grav/user/plugins/github-markdown-alerts
-	
+
 > NOTE: This plugin is a modular component for Grav which may require other plugins to operate, please see its [blueprints.yaml-file on GitHub](https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/blob/main/blueprints.yaml).
 
 ### Admin Plugin
@@ -66,6 +66,8 @@ Use alerts only when they are crucial for user success and limit them to one or 
 
 To add an alert, use a special blockquote line specifying the alert type, followed by the alert information in a standard blockquote. Five types of alerts are available:
 
+### Basic Alerts
+
 ```markdown
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -87,7 +89,36 @@ And here are the rendered alerts:
 
 ![screenshot 1](assets/screenshot.png)
 
-These alerts also support full markdown syntax inside them for example:
+### Custom Titles
+
+You can also specify custom titles for your alerts using the `title` attribute:
+
+```markdown
+> [!NOTE title="Additional Information"]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP title="Recommended Best Practice"]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT title="Before You Continue"]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING title="Immediate Attention Required"]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION title="Potential Risk"]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+And here are the rendered alerts:
+
+![screenshot 2](assets/screenshot2.png)
+
+The custom title will be displayed in the format: "TYPE: Your Custom Title". For example, `[!NOTE title="Additional Information"]` will display as "NOTE: Additional Information".
+
+### Advanced Usage with Markdown
+
+These alerts also support full markdown syntax inside them:
 
 ```markdown
 > [!TIP]
@@ -109,5 +140,37 @@ These alerts also support full markdown syntax inside them for example:
 
 renders like this:
 
-![screenshot 2](assets/screenshot2.png)
+![screenshot 3](assets/screenshot3.png)
 
+### Mixed Examples
+
+Here's an example combining custom titles with rich content:
+
+```markdown
+> [!WARNING title="Security Update Required"]
+> **Immediate action needed:** Please update your system to version 2.5.1 to address critical security vulnerabilities.
+>
+> Steps to update:
+> 1. Backup your current data
+> 2. Download the latest release
+> 3. Run the update script:
+>
+> ```bash
+> # Update command for Linux/Mac
+> curl -sSL https://example.com/update.sh | bash
+> 
+> # Or using package manager
+> sudo apt update && sudo apt upgrade package-name
+> ```
+> 4. Verify installation:
+> ```bash
+> systemctl status your-service
+> journalctl -u your-service --since "1 hour ago"
+> ```
+>
+> Failure to update may result in security breaches and data loss.
+```
+
+renders like this:
+
+![screenshot 4](assets/screenshot4.png)

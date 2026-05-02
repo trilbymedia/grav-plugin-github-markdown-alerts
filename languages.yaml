@@ -22,4 +22,27 @@ en:
     WARNING_TITLE_COLOR: Warning Title Color
     CAUTION_BORDER_COLOR: Caution Border Color
     CAUTION_TITLE_COLOR: Caution Title Color
-
+es:
+  PLUGIN_GITHUB_MARKDOWN_ALERTS:
+    INCLUDE_CSS: Incluir CSS
+    INCLUDE_CSS_HELP: Incluir CSS empaquetado estilo Github para las alertas
+    ENABLE_OCTICONS: Habilitar Octicons
+    ENABLE_OCTICONS_HELP: Habilitar SVGs de Octicons para las alertas
+    WRAPPER_CLASS: Clase del Contenedor
+    TITLE_CLASS: Clase del Título
+    BODY_CLASS: Clase del Cuerpo
+    NOTE: Nota
+    TIP: Consejo
+    IMPORTANT: Importante
+    WARNING: Advertencia
+    CAUTION: Precaución
+    NOTE_BORDER_COLOR: Color del Borde de Nota
+    NOTE_TITLE_COLOR: Color del Título de Nota
+    TIP_BORDER_COLOR: Color del Borde de Consejo
+    TIP_TITLE_COLOR: Color del Título de Consejo
+    IMPORTANT_BORDER_COLOR: Color del Borde de Importante
+    IMPORTANT_TITLE_COLOR: Color del Título de Importante
+    WARNING_BORDER_COLOR: Color del Borde de Advertencia
+    WARNING_TITLE_COLOR: Color del Título de Advertencia
+    CAUTION_BORDER_COLOR: Color del Borde de Precaución
+    CAUTION_TITLE_COLOR: Color del Título de Precaución
