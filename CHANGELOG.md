@@ -1,5 +1,5 @@
 # v2.0.0
-## 06/01/2026
+## 08/03/2026
 
 1. [](#improved)
     * Requires **Grav 2.0** and now uses Grav's new Markdown Extension API instead of injecting closures into the parser
