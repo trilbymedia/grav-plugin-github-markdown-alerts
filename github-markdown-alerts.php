@@ -2,9 +2,9 @@
 namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
-use Grav\Common\Grav;
+use Grav\Common\Markdown\Extension\MarkdownExtensionRegistry;
 use Grav\Common\Plugin;
-use Grav\Common\Twig\Extension\GravExtension;
+use Grav\Plugin\GithubMarkdownAlerts\AlertsExtension;
 use RocketTheme\Toolbox\Event\Event;
 
 /**
@@ -37,69 +37,8 @@ class GithubMarkdownAlertsPlugin extends Plugin
 
     public function onMarkdownInitialized(Event $event)
     {
-        $markdown = $event['markdown'];
-        $markdown->addBlockType('>', 'Alerts', true, false, 0);
-
-        $markdown->blockAlerts = function($line) {
-            if (preg_match('/^>\s\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/i', $line['text'], $matches))
-            {
-                $alert_type = strtolower($matches[1]);
-                $title_text = Grav::instance()['language']->translate('PLUGIN_GITHUB_MARKDOWN_ALERTS.' . strtoupper($alert_type));
-
-                $wrapper_class = $this->config->get('plugins.github-markdown-alerts.wrapper_class');
-                $title_class = $this->config->get('plugins.github-markdown-alerts.title_class');
-                $body_class = $this->config->get('plugins.github-markdown-alerts.body_class');
-
-                if ($this->config->get('plugins.github-markdown-alerts.enable_octicons')) {
-                    $alert_type = strtolower($matches[1]);
-                    $title_text = GravExtension::svgImageFunction('plugin://github-markdown-alerts/assets/icons/octicon-' . $alert_type . '.svg') . " $title_text";
-                }
-
-                $title = [
-                    'name' => 'p',
-                    'handler' => 'line',
-                    'attributes' => [
-                        'class' => $title_class,
-                    ],
-                    'text' =>  $title_text,
-                ];
-
-                $body = [
-                    'name' => 'div',
-                    'handler' => 'lines',
-                    'attributes' => [
-                        'class' => $body_class
-                    ],
-                    'text' => [],
-                ];
-
-                $block = [
-                    'alert' => true,
-                    'type' => $alert_type,
-                    'element' => [
-                        'name' => 'div',
-                        'handler' => 'elements',
-                        'attributes' => [
-                            'class' => $wrapper_class . strtolower($alert_type),
-                            'dir' => 'auto'
-                        ],
-                        'text' => [ $title, $body ],
-                    ]
-                ];
-                return $block;
-            }
-        };
-
-        $markdown->blockAlertsContinue = function($line, array $block) {
-            if (isset($block['interrupted']))
-                return;
-
-            if (!empty($block['alert'])) {
-                $text = preg_replace('/^>\s?/', '', $line['text'] ?? '');
-                $block['element']['text'][1]['text'][] = $text;
-                return $block;
-            }
-        };
+        $registry = new MarkdownExtensionRegistry($event['markdown'], $event['page'] ?? null);
+        $registry->add(new AlertsExtension($this->config->get('plugins.github-markdown-alerts')));
     }
 
     public function onTwigSiteVariables()

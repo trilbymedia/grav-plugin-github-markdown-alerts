@@ -1,3 +1,10 @@
+# v2.0.0
+## 06/01/2026
+
+1. [](#improved)
+    * Requires **Grav 2.0** and now uses Grav's new Markdown Extension API instead of injecting closures into the parser
+    * Renders identical alert markup to v1.1.x; Grav 1.7 sites stay on the v1.1.x line
+
 # v1.1.1
 ## 04/23/2026
 
