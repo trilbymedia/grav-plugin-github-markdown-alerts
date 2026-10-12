@@ -13,6 +13,7 @@
   font-weight: bold;
   align-items: center;
   margin-bottom: 8px;
+  margin-top: 0;
 
   & > svg {
     margin-right: 8px;
