@@ -1,3 +1,9 @@
+# v2.0.1
+## 11/27/2026
+
+1. [](#new)
+    * Spanish translation, thanks to [@pmoreno-rodriguez](https://github.com/pmoreno-rodriguez) [#6](https://github.com/trilbymedia/grav-plugin-github-markdown-alerts/pull/6)
+
 # v2.0.0
 ## 08/03/2026
 
