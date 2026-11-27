@@ -1,7 +1,7 @@
 name: Github Markdown Alerts
 slug: github-markdown-alerts
 type: plugin
-version: 2.0.0
+version: 2.0.1
 description: Extends Grav&#039;s markdown implementation to add support for github&#039;s Alert markdown extensions
 icon: exclamation-triangle
 author:
